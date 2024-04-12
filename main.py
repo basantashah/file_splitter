@@ -88,7 +88,13 @@ def create_batches():
     browse_output_button = tk.Button(root, text="Browse:", bg="Pink") # will change this later for color profile
     browse_output_button.grid(row=5, column=2, padx=10, pady=5)
     
+    # creating batches button
+    create_batches_button = tk.Button(root, text="Create Batches", command=create_batches, bg="blue") #I will change color family later
+    create_batches_button.grid(row=6, column=1, padx=10, pady=10)    
     
+    # display result
+    result_label = tk.Label(root, text="Batches Created Successfully", bg="Black")
+    result_label.grid(row=7, column=1, padx=10, pady=5)
     
     
     
