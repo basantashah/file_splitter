@@ -80,6 +80,14 @@ def create_batches():
     batch_size_entry = tk.Entry(root)
     batch_size_entry.grid(row=3, column=1, padx=10, pady=5)
     
+    # button to choose output dir
+    output_dir_label = tk.Label(root, text="Choose output Dir", bg="red") # I will change this color later
+    output_dir_labl.grid(row=4, colomn=0, padx=10, pady=5)
+    output_dir_entry = tk.Entry(root, width=50) #need to beautify this later
+    output_dir_entry.grid(row=4, column=1, padx=10, pady=5)
+    browse_output_button = tk.Button(root, text="Browse:", bg="Pink") # will change this later for color profile
+    browse_output_button.grid(row=5, column=2, padx=10, pady=5)
+    
     
     
     
