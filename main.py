@@ -37,13 +37,37 @@ def create_batches():
     except Exception as e:
         result_label.config(text=f"Error: {str(e)}")
         
+    # taking different file type
+    def browse_file():
+        file_type = file_type_var.get()
+        filetypes = [("CSV files","*.csv"), ("Excel Files","*.xlsx"), ("Text Files","*.txt"), ("SQL Files","*.sql")]
+        
+        file_path = filedialog.askopenfilename(filetypes=filetypes)
+        input_file_entry.delete(0, tk.END)
+        input_file_entry.insert(0, file_path)
+        
+    def browse_output_dir():
+        output_dir = filedialog.askdirectory()
+        output_dir_entry.delete(0, tk.END)
+        output_dir_entry.insert(0, output_dir)
+        
         
     # Creating GUI windows
-    
     root = tk.Tk()
     root.title("Ncell File Splitter")
     root.geometry("750x250")
     root.configure(bg="grey")
+    
+    #dropdown for fileTypes
+    file_type_var = tk.StringVar(root)
+    file_type_var.set("CSV") #I am choosing CSV as default for now
+    file_type_label = tk.Label(root, text="File Type:", bg="red")
+    file_type_label.grid(row=1, column=0, padx=10, pady=5)
+    file_type_dropdown = tk.OptionMenu(root, file_type_var, "CSV", "Excel","Text","SQL")
+    file_type_dropdown.grid(row=1, column=1, padx=10, pady=5)
+    
+    
+    
     
     
     
