@@ -74,6 +74,12 @@ def create_batches():
     browse_input_button = tk.Button(root, text="Browse", command=browse_file)
     browse_input_button.grid(row=2, column=2, padx=10, pady=5)
     
+    # textbox to choose batchsize
+    batch_size_label = tk.Label(root, text="Enter Batch Size", bg="Red") # I will change color later
+    batch_size_label.grid(row=3, column=0, padx=10, pady=5)
+    batch_size_entry = tk.Entry(root)
+    batch_size_entry.grid(row=3, column=1, padx=10, pady=5)
+    
     
     
     
