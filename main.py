@@ -66,6 +66,14 @@ def create_batches():
     file_type_dropdown = tk.OptionMenu(root, file_type_var, "CSV", "Excel","Text","SQL")
     file_type_dropdown.grid(row=1, column=1, padx=10, pady=5)
     
+    # selecting input files
+    input_file_lable = tk.Label(root, text="Input File=",bg="red") #need to change this color as per company branding
+    input_file_lable.grid(row=2, column=0, padx=10, pady=5)
+    input_file_entry = tk.Entry(root, width=50) #need to change this later for symmetry, I will do this in end
+    input_file_entry.grid(row=2, column=1, padx=10, pady=5)
+    browse_input_button = tk.Button(root, text="Browse", command=browse_file)
+    browse_input_button.grid(row=2, column=2, padx=10, pady=5)
+    
     
     
     
