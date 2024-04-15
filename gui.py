@@ -4,7 +4,7 @@ button_color = "white"
 
 
 # window size
-windows_size = '640x250'
+windows_size = '530x300'
 button_size = '15x8'
 
 column_name_place = 1

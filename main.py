@@ -60,12 +60,21 @@ def browse_output_dir():
     output_dir_entry.delete(0, tk.END)
     output_dir_entry.insert(0, output_dir)
     
-    
+
+
+
+
 # Creating GUI window
 root = tk.Tk()
-root.title("File Splitter")
+root.title("Ncell File Splitter")
 root.geometry(gui.windows_size)
 root.configure(bg=gui.background_color)
+root.minsize(530, 300)
+root.maxsize(550, 300)
+
+#putting logo on title bar, hit and trial until it matches    
+ncell_logo = tk.PhotoImage(file="logo.png", height=10000, width=10000,)
+root.iconphoto(True, ncell_logo)
 
 # Labels and Entry Boxes
 labels = ["Input File:", "Enter Batch Size:", "Choose Output Dir:"]
@@ -89,7 +98,7 @@ for i, label_text in enumerate(labels):
 # Dropdown for File Type
 file_type_var = tk.StringVar(root)
 file_type_var.set("CSV")  # Default file type
-file_type_label = tk.Label(root, text="File Type:", bg=gui.background_color)
+file_type_label = tk.Label(root, text="Input File Format:", bg=gui.background_color)
 file_type_label.grid(row=len(labels), column=0, padx=10, pady=5, sticky="w")
 file_type_dropdown = tk.OptionMenu(root, file_type_var, "Excel", "CSV", "Text", "SQL")
 file_type_dropdown.grid(row=len(labels), column=1, padx=10, pady=5, sticky="w")
@@ -107,10 +116,10 @@ create_batches_button = tk.Button(root, text="Create Batches", command=create_ba
 create_batches_button.grid(row=len(labels)+2, column=1, padx=10, pady=10, sticky="e")
 
 # Copyright and Developed By Labels
-copyright_label = tk.Label(root, text="Copyright © Ncell", bg=gui.copyright_color)
+copyright_label = tk.Label(root, text="Copyright © Ncell Private Ltd", bg=gui.background_color)
 copyright_label.grid(row=len(labels)+3, column=1, padx=10, pady=5, sticky="se")
-developed_by_label = tk.Label(root, text="Developed By: Basant K Shah", bg=gui.copyright_color)
-developed_by_label.grid(row=len(labels)+3, column=1, padx=10, pady=5, sticky="se")
+developed_by_label = tk.Label(root, text="Developed By: Basant K Shah", bg=gui.background_color)
+developed_by_label.grid(row=len(labels)+4, column=1, padx=10, pady=5, sticky="se")
 
 result_label = tk.Label(root, text="", bg=gui.background_color)  # Define result_label
 result_label.grid(row=len(labels)+2, column=0, columnspan=2, padx=10, pady=5, sticky="w")  # Position result_label
