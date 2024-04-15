@@ -17,3 +17,6 @@ button_fg = "black"    # Black foreground
 dropdown_bg = "#ffffff"  # White background
 dropdown_fg = "black"    # Black text
 dropdown_border = "#bfbfbf"  # Light gray border
+
+#font color
+copyright_color = '#FFFFFF'
